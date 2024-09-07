@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const SearchEnginge = () => {
+export const SearchForm = ({ onSearch}) => {
 
     const [userMovieName, setUserMovieName] = useState("");
     const handleInputChange = (e) => {
@@ -8,14 +8,15 @@ export const SearchEnginge = () => {
     }
     const handleFormSubmit = (e) =>{
         e.preventDefault()
-        console.log(userMovieName);
-
+        if (userMovieName.trim()) {
+            onSearch(userMovieName);
+        }
     }
 
     return(
         <div>
             <form onSubmit={handleFormSubmit}>
-            <input type="text" onChange={handleInputChange} placeholder="search a movie..." />
+            <input type="text" value={userMovieName} onChange={handleInputChange} placeholder="search a movie..." />
                 <button type="submit">Search</button>
             </form>
         </div>

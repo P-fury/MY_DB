@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { SearchEnginge} from "./components/search_enginge";
+import { SearchEngine} from "./components/SearchEngine";
 
 const Main = () => {
-    return <SearchEnginge />;
+    return <SearchEngine />;
 };
 
 ReactDOM.render(<Main />, document.getElementById("app"));
